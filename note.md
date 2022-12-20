@@ -34,7 +34,7 @@ Nous allons créer un site Portfolio
 
 *création de l'architecture(arborescence des dossiers et fichiers)
 * création de la table user dans la bdd portfolio
-* création du dossier et fichier aide/creerUnAdminDuSite.php
+* création du dossier et fichier aide/createUser.php
     - ce fichier va nous permettre de créer un formulaire pour enregistrer un administrateur  qui auras accès au back-office (console d'administration) de notre site (pour le portfolio vous-même)
 * création d'une barre de navigation dans le fichier assets/inc/headerFront.php
 * création du fichieradmin/index.php qui va gérer le formulaire de connexion au back-office

@@ -10,14 +10,18 @@
 ?>
 <div class="container">
     <div class="row">
-    <h1>Admin</h1>
+    <h1 class="text-info">Admin</h1>
         <div class="col-4">
             <form class="form-group" action="" method="post">
+                <input type="checkbox" name="chbox" value="chbox">
                 <input type="text" class="mt-3 form-control" name="nom" placeholder="Votre nom">
                 <input type="text" class="mt-3 form-control" name="prenom" placeholder="Votre prenom">
                 <input type="email" class="mt-3 form-control" name="email" placeholder="Votre email">
                 <input type="password" class=" mt-3 form-control" name="password" placeholder="Votre mot de passe">
-                <button type="submit" class="btn mt-3 text-align bg-primary fw-bold" name="soumettre">Enregistrer</button>
+                <label for="isAdmin" class="text-info" >Administrateur : </label>
+                <input type="checkbox" class="mt-3 form-ckeck-input" id="isAdmin" name="isAdmin" >
+                <br>
+                <button type="submit" class="btn mt-3 text-align bg-info fw-bold text-white" name="soumettre">Enregistrer</button>
             </form>
             <?php
             // on récupère le fichier de connexion -> connexion.php qui
@@ -36,8 +40,16 @@
                 //encodage du mot de passe (12 est l'option de niveau d'encodage):
                 $option = ['cost => 12'];
                 $password = password_hash(trim($_POST["password"]),PASSWORD_DEFAULT, $option);
+
+                if(isset($_POST["isAdmin"]) == true){ 
+                    //si la case "isAdmin" est cochée...
+                    $role = 1;
+                } else {
+                    //si la case "isAdmin" n'est pas cochée...
+                    $role =2;
+                }
                 // on dit que 1 est admin pour le role
-                $role = 1;
+               
                 //2 - Préparation de l'écriture SQL
                 $sql = "
                         INSERT INTO user (

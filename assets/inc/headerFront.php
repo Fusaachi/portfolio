@@ -15,10 +15,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">me contacter</a>
+                            <a class="nav-link active" href="#" >me contacter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">mes sites</a>
+                            <a class="nav-link active" href="#">mes sites</a>
                         </li>
                     </ul>
 
