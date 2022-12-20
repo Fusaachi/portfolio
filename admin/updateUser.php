@@ -9,22 +9,22 @@ if  (!isset($_SESSION["isLog"],$_SESSION["role"],$_SESSION["prenom"]) || !$_SESS
     exit;
 }
 ?>
-
-<title>Console d'administration</title>
+<title>Modification des utilisateurs</title>
 <?php
     include("../assets/inc/headerBack.php");
+    // choix de l'id de l'utilisateur à afficher 
+$id = 1;
+require("../core/connexion.php");
+$sql = " SELECT `id_user`, `nom`, `prenom`, `email`, `role`
+        FROM user
+        WHERE id_user = $id";
+$query = mysqli_query($connexion, $sql) or die(mysqli_error($connexion));
+$user = mysqli_fetch_assoc($query);
+echo"<pre>";
+    var_dump($user);
+echo"</pre>"
 ?>
 <main>
-    <!-- gestion de l'affichage des messages -->
-    <div class="row">
-            <?php
-            if(isset($_SESSION["message"])):
-                echo '<div class="alert alert-success" >' . $_SESSION["message"]  . '</div';
-                // on efface la clé message, une fois qu'elle a été affichée avec unset()
-                unset($_SESSION["message"]);
-            endif;
-            ?>
-        </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-4 mt-5 mb-5">

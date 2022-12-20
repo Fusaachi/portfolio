@@ -12,16 +12,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Accueil Admin</a>
+                            <a class="nav-link active" aria-current="page" href="/sitePhpProcedural/admin/accueilAdmin.php">Accueil Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Gestion des utilisateurs</a>
+                            <a class="nav-link" href="/sitePhpProcedural/admin/listUser.php" >Liste des utilisateurs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled">Gestion des compétences</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled">Gestion de la messagerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Deconnexion</a>
                         </li>
                     </ul>
 
