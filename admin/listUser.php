@@ -37,22 +37,25 @@ include("../assets/inc/headerBack.php");
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Role</th>
+                <th></th>
 
                 <?php foreach($users as $user) {
-            /*TODO: Pour chaque utilisateurs, créer une nouvelle ligne(tr) et afficher ses informations dans des */
+            /*TODO: Pour chaque utilisateurs, créer une nouvelle ligne(tr) et afficher ses informations dans des lignes */
                 ?>  
                     <tr>
-                        <th><?php echo $user["id_user"] ?></th>
-                        <th><?php echo $user["nom"] ?></th>
-                        <th><?php echo $user["prenom"] ?></th>
-                        <th><?php echo $user["email"] ?></th>
-                        <th><?php  $user["role"] ;
+                        <td><a class="btn" href="http://localhost/sitePhpProcedural/admin/updateUser.php?id_user=<?=  $user['id_user']?>"> <?php echo $user["id_user"] ?></a></td>
+                        <td><?php echo $user["nom"] ?></td>
+                        <td><?php echo $user["prenom"] ?></td>
+                        <td><?php echo $user["email"] ?></td>
+                        <td><?php  $user["role"] ;
                             if($user["role"] == 1){
                                 echo "Administrateur";
                             } else {
                                 echo "Utilisateur";
                             }
                         ?></th>
+                        <th><a class="btn" type="submit">Supprimer</a></th>
+
                     </tr>
             <?php
            

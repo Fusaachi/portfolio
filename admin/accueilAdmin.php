@@ -26,17 +26,8 @@ if  (!isset($_SESSION["isLog"],$_SESSION["role"],$_SESSION["prenom"]) || !$_SESS
             ?>
         </div>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4 mt-5 mb-5">
-                <h4>Bienvenue <?=$_SESSION["prenom"]?> sur le back-office</h4>
-            </div>
-        </div>
-
-            <div class="text-center">
-                <form action="../core/userController.php" method="post">
-                    <input type="hidden" name="faire" value="log-out">
-                    <button class="btn bg-black text-white fw-bold"type="submit" name="soumettre">Se déconnecter</button>
-                </form>
+        <div id="page1"class="text-center ">
+            <h1>Bienvenue sur le back-office,<br> <?=$_SESSION["prenom"]?> </h1>
         </div>
     </div> 
 </main>

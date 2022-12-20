@@ -13,32 +13,39 @@ if  (!isset($_SESSION["isLog"],$_SESSION["role"],$_SESSION["prenom"]) || !$_SESS
 <?php
     include("../assets/inc/headerBack.php");
     // choix de l'id de l'utilisateur à afficher 
-$id = 1;
+$id = $_GET["id_user"];
 require("../core/connexion.php");
 $sql = " SELECT `id_user`, `nom`, `prenom`, `email`, `role`
         FROM user
         WHERE id_user = $id";
 $query = mysqli_query($connexion, $sql) or die(mysqli_error($connexion));
 $user = mysqli_fetch_assoc($query);
-echo"<pre>";
-    var_dump($user);
-echo"</pre>"
+/*TODO :
+    1) Afficher les informations de l'utilisateur sur la page
+    2) Afficher un utilisateur en fonction de son id quand on clique dessus depuis la liste des utilisateurs (listUsers.php)
+            Indices : paramètre GET Dans l'url*/
 ?>
 <main>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4 mt-5 mb-5">
-                <h4>Bienvenue <?=$_SESSION["prenom"]?> sur le back-office</h4>
+            <div class="text-center mt-5 mb-5">
+                <h4>Modification de l'utilisateur :  <?php echo $user["nom"] ?></h4>   
+                <?php echo"Bienvenue sur le compte de l'utilisateur numéro ". $user["id_user"] . "<br>";
+                    echo"Nom : " . $user["nom"] . "<br>";
+                    echo"Prénom : " . $user["prenom"] . "<br>";
+                    echo"Email : " . $user["email"] . "<br>";
+                    $user["role"] ;
+                    if($user["role"] == 1){
+                        echo "Rôle : Administrateur";
+                    } else {
+                        echo "Rôle : Utilisateur";
+                    }
+                
+                ?> 
             </div>
-        </div>
-
-            <div class="text-center">
-                <form action="../core/userController.php" method="post">
-                    <input type="hidden" name="faire" value="log-out">
-                    <button class="btn bg-black text-white fw-bold"type="submit" name="soumettre">Se déconnecter</button>
-                </form>
-        </div>
     </div> 
+    <div id="yoho">
+
+    </div>
 </main>
 
 <?php

@@ -15,7 +15,7 @@
                             <a class="nav-link active" aria-current="page" href="/sitePhpProcedural/admin/accueilAdmin.php">Accueil Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/sitePhpProcedural/admin/listUser.php" >Liste des utilisateurs</a>
+                            <a class="nav-link" href="/sitePhpProcedural/admin/listUser.php">Liste des utilisateurs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled">Gestion des compétences</a>
@@ -23,11 +23,13 @@
                         <li class="nav-item">
                             <a class="nav-link disabled">Gestion de la messagerie</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Deconnexion</a>
-                        </li>
+                        <li class="nav-item ">
+                            <form action="../core/userController.php" method="post">
+                                <input type="hidden" name="faire" value="log-out">
+                                <button class="btn bg-none " type="submit" name="soumettre">Se déconnecter</button>
+                            </form>
+                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
