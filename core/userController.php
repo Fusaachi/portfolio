@@ -134,11 +134,22 @@
             header("Location: ../admin/updateUser.php?id_user=" . $_POST["id"]);
             exit;
         }
+       
+        // encodage du mot de passe
+        $option = ['cost => 12'];
+                $password = password_hash($password, PASSWORD_DEFAULT, $option);
+
 
         // les données sont validées, préparons-nous à les envoyer en base de données
         require("connexion.php");
-        $sql = 
-
-
+        $sql = "UPDATE user
+                SET  `nom` = '$nom', `prenom` = '$prenom', `email` = '$email', `role` = $role, `password` = '$password'
+                WHERE `id_user` = $id
+                ";
     }
+    $query= mysqli_query($connexion,$sql) or die (mysqli_error($connexion));
+    
+    $_SESSION["message"] = "ERREUR, le rôle est invalide";
+    header("Location: ../admin/updateUser.php?id_user=" . $_POST["id"]);
+    exit;
     ?>
