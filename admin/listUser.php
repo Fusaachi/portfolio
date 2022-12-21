@@ -53,9 +53,10 @@ include("../assets/inc/headerBack.php");
                             } else {
                                 echo "Utilisateur";
                             }
-                        ?></th>
-                        <td><a class="btn" href="http://localhost/sitePhpProcedural/admin/updateUser.php?id_user=<?=  $user['id_user']?>"> Modifier</a>/<a class="btn" type="submit">Supprimer</a></td>
-                        <td></td>
+                        ?></td>
+                        <td><a class="btn p-0 m-0" href="http://localhost/sitePhpProcedural/admin/updateUser.php?id_user=<?=  $user['id_user']?>"> Modifier</a> /
+                            <a class="btn p-0 m-0 " href="http://localhost/sitePhpProcedural/admin/readUser.php?id_user=<?=  $user['id_user']?>">Détails</a> /
+                            <a class="btn p-0 m-0" href="http://localhost/sitePhpProcedural/admin/deleteUser.php?id_user=<?=  $user['id_user']?>">Supprimer</a></td>
 
                     </tr>
             <?php

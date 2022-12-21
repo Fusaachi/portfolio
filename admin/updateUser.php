@@ -28,18 +28,6 @@ $user = mysqli_fetch_assoc($query);
 <main>
     <div class="container">
         <div class="text-center mt-5 mb-5">
-            <h4>Détails de l'utilisateur :  <?php echo $user["nom"] ?></h4>   
-            <?php echo"Bienvenue sur le compte de l'utilisateur numéro ". $user["id_user"] . "<br>";
-                echo"Nom : " . $user["nom"] . "<br>";
-                echo"Prénom : " . $user["prenom"] . "<br>";
-                echo"Email : " . $user["email"] . "<br>";
-                $user["role"] ;
-                if($user["role"] == 1){
-                    echo "Rôle : Administrateur";
-                } else {
-                    echo "Rôle : Utilisateur";
-                }
-            ?> 
             <h4 class="mt-5">Modifier l'utilisateur</h4>
             <!-- gestion de l'affichage des messages -->
             <div class="row">
@@ -78,14 +66,10 @@ $user = mysqli_fetch_assoc($query);
                             echo "selected";} 
                             ?>>Administrateur</option>
                     </select>
-
-                    <input type="submit" class="btn bg-none border">
+                    <input type="submit" class="btn bg-white">
                 </form>
             </div>
         </div>  
-    </div> 
-    <div id="yoho">
-
     </div>
 </main>
 

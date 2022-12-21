@@ -1,6 +1,7 @@
 body{ max-width: 1920px; width: 100%; color: black; background-color:rgb(130, 83, 88); margin: 0; padding: 0}
-#footer {width: 100%;position: absolute; background-color: aliceblue;}
-#page1{padding: 150px 0 250px 0;}
+ main{min-width:100% ;} 
+#footer {width: 100%; background-color: aliceblue; position:absolute;bottom : 0}
+
 
 
 
