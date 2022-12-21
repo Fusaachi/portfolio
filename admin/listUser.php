@@ -27,7 +27,7 @@ include("../assets/inc/headerBack.php");
     <div class="container">
         <div class="row ">
             <div class="col-4 mt-5">
-                <h4 class="mb-5" >Bienvenue,<br> sur la liste des utilisateurs inscrit</h4>
+                <h4 class="mb-5" >Bienvenue,<br> sur la liste des utilisateurs inscrits</h4>
             </div>
         </div>
         <table class="table">

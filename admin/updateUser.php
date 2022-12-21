@@ -9,7 +9,7 @@ if  (!isset($_SESSION["isLog"],$_SESSION["role"],$_SESSION["prenom"]) || !$_SESS
     exit;
 }
 ?>
-<title>Modification des utilisateurs</title>
+<title>Modifier les utilisateurs</title>
 <?php
     include("../assets/inc/headerBack.php");
     // choix de l'id de l'utilisateur à afficher 
@@ -27,21 +27,62 @@ $user = mysqli_fetch_assoc($query);
 ?>
 <main>
     <div class="container">
-            <div class="text-center mt-5 mb-5">
-                <h4>Modification de l'utilisateur :  <?php echo $user["nom"] ?></h4>   
-                <?php echo"Bienvenue sur le compte de l'utilisateur numéro ". $user["id_user"] . "<br>";
-                    echo"Nom : " . $user["nom"] . "<br>";
-                    echo"Prénom : " . $user["prenom"] . "<br>";
-                    echo"Email : " . $user["email"] . "<br>";
-                    $user["role"] ;
-                    if($user["role"] == 1){
-                        echo "Rôle : Administrateur";
-                    } else {
-                        echo "Rôle : Utilisateur";
-                    }
-                
-                ?> 
+        <div class="text-center mt-5 mb-5">
+            <h4>Détails de l'utilisateur :  <?php echo $user["nom"] ?></h4>   
+            <?php echo"Bienvenue sur le compte de l'utilisateur numéro ". $user["id_user"] . "<br>";
+                echo"Nom : " . $user["nom"] . "<br>";
+                echo"Prénom : " . $user["prenom"] . "<br>";
+                echo"Email : " . $user["email"] . "<br>";
+                $user["role"] ;
+                if($user["role"] == 1){
+                    echo "Rôle : Administrateur";
+                } else {
+                    echo "Rôle : Utilisateur";
+                }
+            ?> 
+            <h4 class="mt-5">Modifier l'utilisateur</h4>
+            <!-- gestion de l'affichage des messages -->
+            <div class="row">
+                <?php
+                if(isset($_SESSION["message"])):
+                    echo '<div class="alert alert-danger" >' . $_SESSION["message"]  . '</div';
+                    // on efface la clé message, une fois qu'elle a été affichée avec unset()
+                    unset($_SESSION["message"]);
+                endif;
+                ?>
             </div>
+            <div class="container">            
+                <form method="POST"  action="../core/userController.php" class="text-start">
+                    <input type="hidden" name ="faire" value="update">
+
+                    <input type="hidden" name="id" value="<?= $user["id_user"]; ?>">
+
+                    <label for="nom">Nom :</label>
+                    <input type="text" name="nom" id="nom" class="form-control mb-1" value="<?= $user["nom"]; ?>">
+
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom" class="form-control mb-1" value="<?= $user["prenom"]; ?>">
+
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email" class="form-control mb-1" value="<?= $user["email"]; ?>">
+
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" id="password" class="form-control mb-1">
+
+                    <label for="role">Role :</label>
+                    <select name="role" id="role" class="mb-1 form-control">
+                        <option value="2" <?php if($user["role"] == 2){
+                            echo "selected";} 
+                            ?>>Utilisateur</option>
+                        <option value="1" <?php if($user["role"] == 1){
+                            echo "selected";} 
+                            ?>>Administrateur</option>
+                    </select>
+
+                    <input type="submit" class="btn bg-none border">
+                </form>
+            </div>
+        </div>  
     </div> 
     <div id="yoho">
 
