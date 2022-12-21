@@ -30,20 +30,20 @@ include("../assets/inc/headerBack.php");
                 <h4 class="mb-5" >Bienvenue,<br> sur la liste des utilisateurs inscrits</h4>
             </div>
         </div>
-        <table class="table">
+        <table class="table text-center">
             <tr>
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th></th>
+                <th>Actions</th>
 
                 <?php foreach($users as $user) {
             /*TODO: Pour chaque utilisateurs, créer une nouvelle ligne(tr) et afficher ses informations dans des lignes */
                 ?>  
                     <tr>
-                        <td><a class="btn" href="http://localhost/sitePhpProcedural/admin/updateUser.php?id_user=<?=  $user['id_user']?>"> <?php echo $user["id_user"] ?></a></td>
+                        <td><?php echo $user["id_user"] ?></td>
                         <td><?php echo $user["nom"] ?></td>
                         <td><?php echo $user["prenom"] ?></td>
                         <td><?php echo $user["email"] ?></td>
@@ -54,7 +54,8 @@ include("../assets/inc/headerBack.php");
                                 echo "Utilisateur";
                             }
                         ?></th>
-                        <th><a class="btn" type="submit">Supprimer</a></th>
+                        <td><a class="btn" href="http://localhost/sitePhpProcedural/admin/updateUser.php?id_user=<?=  $user['id_user']?>"> Modifier</a>/<a class="btn" type="submit">Supprimer</a></td>
+                        <td></td>
 
                     </tr>
             <?php

@@ -147,8 +147,9 @@
                 WHERE `id_user` = $id
                 ";
     }
+    //Execution de la requête
     $query= mysqli_query($connexion,$sql) or die (mysqli_error($connexion));
-    
+
     $_SESSION["message"] = "ERREUR, le rôle est invalide";
     header("Location: ../admin/updateUser.php?id_user=" . $_POST["id"]);
     exit;

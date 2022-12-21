@@ -58,19 +58,19 @@ $user = mysqli_fetch_assoc($query);
                     <input type="hidden" name="id" value="<?= $user["id_user"]; ?>">
 
                     <label for="nom">Nom :</label>
-                    <input type="text" name="nom" id="nom" class="form-control mb-1" value="<?= $user["nom"]; ?>">
+                    <input type="text" name="nom" id="nom" class="form-control mb-2" value="<?= $user["nom"]; ?>">
 
                     <label for="prenom">Prénom :</label>
-                    <input type="text" name="prenom" id="prenom" class="form-control mb-1" value="<?= $user["prenom"]; ?>">
+                    <input type="text" name="prenom" id="prenom" class="form-control mb-2" value="<?= $user["prenom"]; ?>">
 
                     <label for="email">Email :</label>
-                    <input type="email" name="email" id="email" class="form-control mb-1" value="<?= $user["email"]; ?>">
+                    <input type="email" name="email" id="email" class="form-control mb-2" value="<?= $user["email"]; ?>">
 
                     <label for="password">Password :</label>
-                    <input type="password" name="password" id="password" class="form-control mb-1">
+                    <input type="password" name="password" id="password" class="form-control mb-2">
 
                     <label for="role">Role :</label>
-                    <select name="role" id="role" class="mb-1 form-control">
+                    <select name="role" id="role" class="mb-3 form-control">
                         <option value="2" <?php if($user["role"] == 2){
                             echo "selected";} 
                             ?>>Utilisateur</option>
